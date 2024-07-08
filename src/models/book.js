@@ -31,14 +31,16 @@ const bookSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  language: {
-    type: String,
-    required: true,
-  },
 
   available: {
     type: Boolean,
     required: true,
+    default: true,
+  },
+  quantity:{
+    type: Number,
+    required: true,
+    default: 1,
   },
   borrowedBy: {
     type: mongoose.Schema.Types.ObjectId,
@@ -51,4 +53,4 @@ const bookSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("BOOK", bookSchema);
+module.exports = mongoose.model("Book", bookSchema);
